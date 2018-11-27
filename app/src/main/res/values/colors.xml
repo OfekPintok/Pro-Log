@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffff8800</color>
+    <color name="colorPrimaryDark">#ff5722</color>
+    <color name="colorAccent">#2d3bff</color>
+    <color name="colorSecondaryLight">#8fadf9</color>
+    <color name="datePicker_color">#58a5f0</color>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.v7.preference.PreferenceCategory android:title="Visual settings">
+
+        <android.support.v7.preference.ListPreference
+            android:defaultValue="0"
+            android:entries="@array/Themes"
+            android:entryValues="@array/ThemesValues"
+            android:key="PREF_KEY_THEMES"
+            android:summary="Currently: %s"
+            android:title="Theme color" />
+    </android.support.v7.preference.PreferenceCategory>
+
+    <android.support.v7.preference.PreferenceCategory android:title="in-app data">
+
+        <android.support.v7.preference.ListPreference
+            android:defaultValue="0"
+            android:entries="@array/Unit"
+            android:entryValues="@array/UnitValues"
+            android:key="PREF_KEY_UNITS"
+            android:summary="Currently: %s"
+            android:title="Weight units" />
+
+    </android.support.v7.preference.PreferenceCategory>
+</android.support.v7.preference.PreferenceScreen>

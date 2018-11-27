@@ -1,0 +1,69 @@
+<resources>
+    <!-- HomeScreenActivity -->
+    <string name="app_name">Pro L0g</string>
+    <string name="app_title"><u>Welcome to ProL0g</u></string>
+    <string name="no_workouts_message"> No workouts, yet!\n
+                                        What are you waiting for?\n
+                                        Add your first workout </string>
+    <string name="tab_date">Date</string>
+    <string name="tab_workout_num">Workout</string>
+    <string name="tab_add">Exercise</string>
+    <string name="expand_button_desc">expand button</string>
+    <string name="add_button">add new exercise</string>
+    <string name="context_menu_group_title">Workout options - #</string>
+    <string name="context_menu_edit_date">Edit date</string>
+    <string name="context_menu_delete">Delete</string>
+    <string name="context_menu_edit">Edit</string>
+    <string name="context_menu_child_title">Exercise options -</string>
+    <string name="KG_units">KG</string>
+    <string name="LB_units">LB</string>
+
+    <!-- Menu -->
+    <string name="action_settings">Settings</string>
+    <string name="action_reset">Reset all</string>
+    <string name="resetAlert_title">Wait a second..</string>
+    <string name="resetAlert_message">Are you sure you want to delete <b>all</b> your workouts?</string>
+    <string name="resetAlert_positive">Yes I am</string>
+    <string name="resetAlert_negative">Not yet</string>
+    <string name="resetAlert_positive_snakebar">All your workouts have been deleted</string>
+    <string name="delete_exercise_from_spinner">Delete exercise</string>
+    <string name="exercise_reset_ok">Okay</string>
+    <string name="exercise_reset_abort">Abort</string>
+    <string name="exercise_reset_title">This will reset your exercise list</string>
+    <string name="reset_exercise_list_title">Reset exercises list</string>
+
+
+    <!-- New workout dialog -->
+    <string name="new_workout_title">NEW WORKOUT</string>
+    <string name="new_workout_line_1">This is your #%s workout</string>
+    <string name="new_workout_line_2">Enter the day of the workout:</string>
+    <string name="new_workout_line_3">Exercise</string>
+    <string name="new_workout_date_hint">Select a date</string>
+    <string name="confirm">confirm</string>
+    <string name="calendar_image_button_desc">Pick a date from the calendar</string>
+    <string name="error_workout_already_exists">This workout is already exists</string>
+    <string name="error_no_selected_date">You have to select a date first</string>
+
+    <!-- New exercise dialog -->
+    <string name="new_exercise_title">NEW EXERCISE</string>
+    <string name="exercise_choose_exercise">Choose exercise</string>
+    <string name="Weight">Weight</string>
+    <string name="Reps">Reps</string>
+    <string name="Sets">Sets</string>
+    <string name="Custom">Custom</string>
+    <string name="error_proper_name">Enter a proper name</string>
+    <string name="error_already_exists">This exercise is already exists</string>
+    <string name="error_blank_field">Blank field</string>
+    <string name="finish">Finish</string>
+    <string name="exercise_title">Enter the name of the exercise</string>
+    <string name="datePicker_title">Select Date</string>
+    <string name="exercise_delete_desc">delete a selective exercise</string>
+    <string name="exercise_delete_error">Can\'t remove this</string>
+    <string name="close">Close</string>
+    <string name="name">NAME</string>
+
+    <!-- Custom exercise dialog -->
+    <string name="Custom_exercise_title">Custom exercise:</string>
+    <string name="custom">Custom</string>
+
+</resources>

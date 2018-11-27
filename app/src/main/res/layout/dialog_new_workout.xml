@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:mContext=".fragments.NewWorkoutDialogFragment">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/gl_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1.0" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/gl_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="-187dp" />
+
+    <TextView
+        android:id="@+id/text_workout_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/new_workout_line_1"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/gl_left"
+        app:layout_constraintStart_toStartOf="@+id/gl_right"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_workout_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/new_workout_line_2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toStartOf="@+id/gl_left"
+        app:layout_constraintStart_toEndOf="@+id/gl_right"
+        app:layout_constraintTop_toBottomOf="@+id/text_workout_1" />
+
+    <TextView
+        android:id="@+id/text_workout_date"
+        android:layout_width="200dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/textinputborder"
+        android:gravity="center"
+        android:text="@string/new_workout_date_hint"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/gl_right"
+        app:layout_constraintTop_toBottomOf="@+id/text_workout_2" />
+
+
+    <ImageButton
+        android:id="@+id/imageb_workout_calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/calendar_image_button_desc"
+        android:src="@android:drawable/ic_menu_today"
+        app:layout_constraintEnd_toStartOf="@+id/text_workout_date"
+        app:layout_constraintTop_toBottomOf="@+id/text_workout_2" />
+
+    <Button
+        android:id="@+id/button_workout_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="@string/confirm"
+        app:layout_constraintEnd_toStartOf="@+id/gl_left"
+        app:layout_constraintTop_toBottomOf="@+id/text_workout_date" />
+
+    <Button
+        android:id="@+id/button_workout_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:text="@android:string/cancel"
+        app:layout_constraintStart_toStartOf="@+id/gl_right"
+        app:layout_constraintTop_toTopOf="@+id/button_workout_confirm" />
+
+
+</android.support.constraint.ConstraintLayout>
