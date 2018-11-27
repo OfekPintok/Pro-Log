@@ -4,7 +4,7 @@
 In short, Pro Log is a simple android app that was created for managing the user workouts, keeping the workouts data such as the date, which exercises were done and more. <b>This application is for practice only,</b> which explain why I didn't invest my time and energy to design it.
 
 # Motivation
-So, it is my first project on Android AND GitHub. Everyone have to start from somewhere.
+So, it is my first project on Android AND GitHub. Everyone has to start from somewhere.
 You can't improve your code without dirt your hand a little.
 
 # ScreenShots
@@ -20,7 +20,7 @@ You can't improve your code without dirt your hand a little.
 Not needed at the moment.
 
 # About me
-Ofek, a 2nd year student of computer science. Currently- taking place in [Android Academy - TLV](@[https://www.facebook.com/groups/android.academy.ils/](url)) fundamental course for 3 months (at the moment)
+Ofek, a 2nd year student of computer science.</br> Currently- taking place in [Android Academy - TLV](https://www.facebook.com/groups/android.academy.ils/) Fundamentals course.
 
 # License
 Copyright 2018 Ofek Pintok (c)
