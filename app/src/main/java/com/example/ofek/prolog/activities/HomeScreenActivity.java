@@ -499,6 +499,7 @@ public class HomeScreenActivity extends AppCompatActivity {
         mListAdapter.notifyDataSetChanged();
     }
 
+    /** Reset the value of the Exercises Preference Key in the Shared Preference file */
     private void restoreDefaultExerciseList(){
         SharedPreferences.Editor editor = mSharedPref.edit();
         editor.putString(PREF_KEY_EXERCISES_SET, null);
