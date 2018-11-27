@@ -20,8 +20,7 @@ You can't improve your code without dirt your hand a little.
 Not needed at the moment.
 
 # About me
-Ofek, a 2nd year student of computer science.
-Currently- taking place in Android Academy fundamental course for 3 months (at the moment)
+Ofek, a 2nd year student of computer science. Currently- taking place in [Android Academy - TLV](@[https://www.facebook.com/groups/android.academy.ils/](url)) fundamental course for 3 months (at the moment)
 
 # License
 Copyright 2018 Ofek Pintok (c)
