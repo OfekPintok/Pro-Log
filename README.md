@@ -8,16 +8,33 @@ So, it is my first project on Android AND GitHub. Everyone has to start from som
 You can't improve your code without dirt your hand a little.
 
 # ScreenShots
-// Add some screenshots
+![screenshot_2018-11-28-15-45-19](https://user-images.githubusercontent.com/38051253/49156388 -f421de80-f325-11e8-9630-f92bb77c461f.png) ![screenshot_2018-11-28-15-44-51](https://user-images.githubusercontent.com/38051253/49156337-c63c9a00-f325-11e8-90c2-a4c139995867.png) ![screenshot_2018-11-28-15-44-44](https://user-images.githubusercontent.com/38051253/49156336-c63c9a00-f325-11e8-9a15-7b239cdd1055.png) 
 
 # How to use?
-// A short explanation about how to use the app
+In this specific explanation we will use Android Studio to compile and run the app.</br>
+1.Download the project from GitHub.</br>
+2.Open Android Studio and select the open tab from the File menu.</br>
+3.Search for the location where the project was saved in, then double select it.</br>
+4.Run the app (look for the green arrow icon or just press shift+F10 on windows).</br>
+5.Select the device that you would like to use the app from.</br>
+The project will be compiled on your device and then you ready to go.
 
 # Libraries Used
-// Update the libraries that I was using
+1. <i>wdullaer datetimepicker</i>: has a dynamic date time picker, used to pick a date for a workout.
+2. <i>gson</i>: used to serialize the sub-class of the workout (i.e exercises and worklines) so it would fit the database.
+3. <i>room</i>: google's support library for sql, used to store the workouts.
+and so on.
+
+# Components Used
+I chose some specific components to challange myself (and also because I had no choice :D ):
+1. Expanded ListView and ListView: to show the data
+2. Dialog Fragments: to add some UI
+3. Shared References: To keep the settings and the default exercises list in a file
+4. For database: ViewModel,RoomDataBase, Repository and Dao.
+and so on.
 
 # Contribute
-Not needed at the moment.
+Code review would be nice.
 
 # About me
 Ofek, a 2nd year student of computer science.</br> Currently- taking place in [Android Academy - TLV](https://www.facebook.com/groups/android.academy.ils/) Fundamentals course.
