@@ -8,7 +8,7 @@ So, it is my first project on Android AND GitHub. Everyone has to start from som
 You can't improve your code without dirt your hand a little.
 
 # ScreenShots
-![screenshot_2018-11-28-15-45-19](https://user-images.githubusercontent.com/38051253/49156388 -f421de80-f325-11e8-9630-f92bb77c461f.png) ![screenshot_2018-11-28-15-44-51](https://user-images.githubusercontent.com/38051253/49156337-c63c9a00-f325-11e8-90c2-a4c139995867.png) ![screenshot_2018-11-28-15-44-44](https://user-images.githubusercontent.com/38051253/49156336-c63c9a00-f325-11e8-9a15-7b239cdd1055.png) 
+![screenshot_2018-11-28-15-45-19](https://user-images.githubusercontent.com/38051253/49156388-f421de80-f325-11e8-9630-f92bb77c461f.png) ![screenshot_2018-11-28-15-44-51](https://user-images.githubusercontent.com/38051253/49156337-c63c9a00-f325-11e8-90c2-a4c139995867.png) ![screenshot_2018-11-28-15-44-44](https://user-images.githubusercontent.com/38051253/49156336-c63c9a00-f325-11e8-9a15-7b239cdd1055.png) 
 
 # How to use?
 In this specific explanation we will use Android Studio to compile and run the app.</br>
