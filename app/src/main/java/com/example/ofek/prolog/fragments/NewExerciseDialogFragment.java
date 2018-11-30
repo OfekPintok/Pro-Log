@@ -294,12 +294,13 @@ public class NewExerciseDialogFragment extends DialogFragment implements
                         // The exercise is already exists in the list
                         if (mEditMode) {
                             exerciseList.remove(mChildPosition);
-                            mChildPosition = workoutGroup.getExerciseList().indexOf(exercise);
                         }
                         // Insert the new workline
                         worklineItemsList = exercise.getWorklineItemsList();
                         worklineItemsList.add(worklineItem);
                         exercise.setWorklineItemsList(worklineItemsList);
+                        // Update the current child
+                        mChildPosition = workoutGroup.getExerciseList().indexOf(exercise);
                         // Update the group
                         updateExercise(workoutGroup, exercise);
                     }
