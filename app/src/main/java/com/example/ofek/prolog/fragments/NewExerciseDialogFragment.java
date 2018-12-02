@@ -293,7 +293,14 @@ public class NewExerciseDialogFragment extends DialogFragment implements
                     } else {
                         // The exercise is already exists in the list
                         if (mEditMode) {
-                            exerciseList.remove(mChildPosition);
+                            // In case the user want to save the same exercise name
+                            if (exercise.getExerciseName().equals(name)) {
+                                // Remove the first workline only
+                                exercise.getWorklineItemsList().remove(FIRST_ITEM);
+                            } else {
+                                // Not the same exercise; remove the whole object
+                                exerciseList.remove(mChildPosition);
+                            }
                         }
                         // Insert the new workline
                         worklineItemsList = exercise.getWorklineItemsList();
