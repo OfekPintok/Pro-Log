@@ -451,7 +451,7 @@ public class HomeScreenActivity extends AppCompatActivity {
         dpd.setOnDateSetListener(new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-                String month = new DateFormatSymbols().getMonths()[monthOfYear - 1];
+                String month = new DateFormatSymbols().getMonths()[monthOfYear];
                 String date = month + " " + dayOfMonth + ", " + year;
                 groupToEdit.setDate(date);
                 mWorkoutViewModel.update(groupToEdit);
@@ -499,7 +499,6 @@ public class HomeScreenActivity extends AppCompatActivity {
         mListAdapter.notifyDataSetChanged();
     }
 
-    /** Reset the value of the Exercises Preference Key in the Shared Preference file */
     private void restoreDefaultExerciseList(){
         SharedPreferences.Editor editor = mSharedPref.edit();
         editor.putString(PREF_KEY_EXERCISES_SET, null);
