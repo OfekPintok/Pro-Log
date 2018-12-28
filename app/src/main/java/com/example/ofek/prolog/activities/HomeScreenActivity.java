@@ -306,7 +306,7 @@ public class HomeScreenActivity extends AppCompatActivity {
      */
     public void buildWorkout(int groupPosition, String date) {
         //set new data as a group
-        String workoutPosition = String.valueOf(groupPosition + 1);
+        int workoutPosition = groupPosition + 1;
         WorkoutGroup workoutGroup = new WorkoutGroup(workoutPosition, date);
         //insert the new workout group to the list
         mWorkoutList.add(workoutGroup);
@@ -451,7 +451,7 @@ public class HomeScreenActivity extends AppCompatActivity {
         dpd.setOnDateSetListener(new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-                String month = new DateFormatSymbols().getMonths()[monthOfYear - 1];
+                String month = new DateFormatSymbols().getMonths()[monthOfYear];
                 String date = month + " " + dayOfMonth + ", " + year;
                 groupToEdit.setDate(date);
                 mWorkoutViewModel.update(groupToEdit);

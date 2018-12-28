@@ -17,7 +17,7 @@ import android.support.annotation.NonNull;
 import com.example.ofek.prolog.database.dao.WorkoutDao;
 import com.example.ofek.prolog.database.entity.WorkoutGroup;
 
-@Database(entities = {WorkoutGroup.class}, version = 3, exportSchema = false)
+@Database(entities = {WorkoutGroup.class}, version = 4, exportSchema = false)
 public abstract class WorkoutRoomDatabase extends RoomDatabase {
 
     public abstract WorkoutDao workoutDao();

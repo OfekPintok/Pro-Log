@@ -87,7 +87,7 @@ public class NewWorkoutDialogFragment extends DialogFragment implements
                 dpd.setOnDateSetListener(new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePickerDialog view, int year, int monthOfYear, int dayOfMonth) {
-                        String month = new DateFormatSymbols().getMonths()[monthOfYear - 1];
+                        String month = new DateFormatSymbols().getMonths()[monthOfYear];
                         String date = month + " " + dayOfMonth + ", " + year;
                         mPickDate.setText(date);
                         setDate(date);

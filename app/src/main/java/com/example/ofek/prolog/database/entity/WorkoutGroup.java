@@ -30,7 +30,7 @@ public class WorkoutGroup {
     @NonNull
     @PrimaryKey
     @ColumnInfo(name = "Position")
-    private String mGroupPosition;
+    private int mGroupPosition;
 
     @NonNull
     @ColumnInfo(name = "Date")
@@ -39,12 +39,12 @@ public class WorkoutGroup {
     @TypeConverters(ExerciseConverter.class)
     private List<ExerciseItem> mExerciseList = new ArrayList<>();
 
-    public WorkoutGroup(@NonNull String groupPosition, @NonNull String date){
+    public WorkoutGroup(@NonNull int groupPosition, @NonNull String date){
         this.mGroupPosition = groupPosition;
         this.mDate = date;
     }
 
-    public String getGroupPosition() {
+    public int getGroupPosition() {
         return mGroupPosition;
     }
 
