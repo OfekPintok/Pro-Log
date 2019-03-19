@@ -37,7 +37,7 @@ and so on.
 Code review would be nice.
 
 # About me
-Ofek, a 2nd year student of computer science.</br> Currently- taking place in [Android Academy - TLV](https://www.facebook.com/groups/android.academy.ils/) Fundamentals course.
+Ofek, a mobile developer at his beginning.</br>
 
 # License
 Copyright 2018 Ofek Pintok (c)
