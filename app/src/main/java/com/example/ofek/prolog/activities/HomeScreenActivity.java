@@ -10,6 +10,7 @@ import android.app.AlertDialog;
 import android.app.DialogFragment;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.ClipData;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -23,10 +24,12 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.ContextMenu;
+import android.view.DragEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -68,10 +71,10 @@ public class HomeScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mExpandableListView = (ExpandableListView) findViewById(R.id.myList);
+        mExpandableListView = findViewById(R.id.myList);
 
         mWorkoutViewModel = ViewModelProviders.of(this).get(WorkoutViewModel.class);
         // Observe the changes in the Expandable ListView
@@ -97,13 +100,30 @@ public class HomeScreenActivity extends AppCompatActivity {
         // Set a context menu for the expandable ListView elements
         registerForContextMenu(mExpandableListView);
 
+        findViewById(R.id.activity_relative_layout).setOnDragListener(new MyDragListener());
+
         // Get a reference to the fab component and set a click listener
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        final FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Get the last workout position and create a new workout
                 createNewWorkout(mListAdapter.getGroupCount());
+            }
+        });
+
+        fab.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+
+                ClipData data = ClipData.newPlainText("", "");
+
+                View.DragShadowBuilder myShadow = new View.DragShadowBuilder(fab);
+
+                // Starts the drag
+                v.startDrag(data, myShadow, v, 0);
+
+                return true;
             }
         });
 
@@ -175,7 +195,7 @@ public class HomeScreenActivity extends AppCompatActivity {
         if (typeClicked == ExpandableListView.PACKED_POSITION_TYPE_CHILD) {
             // childType:
             // 0 = Normal child (single workline)
-            // 1 = Custom child (more than a single worklines)
+            // 1 = Custom child (more than a single workline)
             int childType =
                     typeOfChild(mWorkoutList.get(groupPosition)
                             .getExerciseList().get(childPosition).getWorklineItemsList());
@@ -363,9 +383,9 @@ public class HomeScreenActivity extends AppCompatActivity {
 
     /** Set the selected theme color of the user */
     private void setThemeColor(int themePref) {
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        ConstraintLayout tableTabs = (ConstraintLayout) findViewById(R.id.tableTabs);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        FloatingActionButton fab = findViewById(R.id.fab);
+        ConstraintLayout tableTabs = findViewById(R.id.tableTabs);
 
         switch (themePref) {
             case 0:
@@ -402,9 +422,9 @@ public class HomeScreenActivity extends AppCompatActivity {
     /** Update the new look of the screen after adding the first workout */
     private void setUpdatedView(int viewRespond) {
         //get reference to the visual group
-        TextView noWorkoutsYet = (TextView) findViewById(R.id.text_noworkout);
-        TextView welcomeTitle = (TextView) findViewById(R.id.text_welcome);
-        ConstraintLayout tableTabs = (ConstraintLayout) findViewById(R.id.tableTabs);
+        TextView noWorkoutsYet = findViewById(R.id.text_noworkout);
+        TextView welcomeTitle = findViewById(R.id.text_welcome);
+        ConstraintLayout tableTabs = findViewById(R.id.tableTabs);
         //set new visibilities to the group
         switch (viewRespond) {
             case NO_WORKOUTS_VIEW:
@@ -504,4 +524,67 @@ public class HomeScreenActivity extends AppCompatActivity {
         editor.putString(PREF_KEY_EXERCISES_SET, null);
         editor.apply();
     }
+
+    private class MyDragListener implements View.OnDragListener {
+
+        RelativeLayout.LayoutParams layoutParams;
+
+        @Override
+            public boolean onDrag(View v, DragEvent event) {
+
+            View view = (View) event.getLocalState();
+            //Set maximum boundaries for drop
+            final int maxLeft = (int) (v.getX() + view.getWidth()*0.1);
+            final int maxRight = (int) (v.getWidth() - view.getWidth()*1.1);
+            final int maxTop = (int) (v.getY() + view.getWidth()*0.1);
+            final int maxBottom = (int) (v.getHeight() - view.getHeight()*1.1);
+
+                switch (event.getAction()) {
+                    case DragEvent.ACTION_DRAG_STARTED:
+                        layoutParams = (RelativeLayout.LayoutParams) view.getLayoutParams();
+                        break;
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        break;
+                    case DragEvent.ACTION_DROP:
+
+                        // Get new coordination
+                        final int x = (int) event.getX() - (view.getWidth()/2);
+                        final int y = (int) event.getY() - (view.getHeight()/2);
+
+                        // Remove base align rules
+                        layoutParams.removeRule(RelativeLayout.ALIGN_END);
+                        layoutParams.removeRule(RelativeLayout.ALIGN_RIGHT);
+                        layoutParams.removeRule(RelativeLayout.ALIGN_BOTTOM);
+
+                        // Update right/left margins
+                        if (x < maxLeft || x > maxRight) {
+                            if (x <= maxLeft)
+                            layoutParams.leftMargin = maxLeft;
+                            else
+                                layoutParams.leftMargin = maxRight;
+                        } else {
+                            layoutParams.leftMargin = x;
+                        }
+
+                        // Update top/bottom margins
+                        if (y < maxTop || y > maxBottom) {
+                            if (y <= maxTop)
+                                layoutParams.topMargin = maxTop;
+                            else
+                                layoutParams.topMargin = maxBottom;
+                        } else {
+                            layoutParams.topMargin = y;
+                        }
+
+                            view.setLayoutParams(layoutParams);
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                    default:
+                        break;
+                }
+                return true;
+            }
+        }
 }

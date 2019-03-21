@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_relative_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:mContext=".activities.HomeScreenActivity">
@@ -11,7 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -24,18 +28,23 @@
     </android.support.design.widget.AppBarLayout>
 
     <include
+        android:id="@+id/include"
         layout="@layout/content_home_screen"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
+        android:layout_alignEnd="@+id/appbar"
+        android:layout_alignRight="@+id/appbar"
+        android:layout_alignBottom="@+id/include"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
         app:backgroundTint="@color/colorPrimary"
         app:fabCustomSize="55dp"
         app:srcCompat="@drawable/ic_add_workout" />
 
-</android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>
