@@ -134,10 +134,15 @@ public class HomeScreenActivity extends AppCompatActivity {
         // Get the saved settings and apply them
         mSharedPref = android.support.v7.preference.PreferenceManager
                 .getDefaultSharedPreferences(this);
-        int themePref = Integer.parseInt(mSharedPref.getString(PREF_KEY_THEMES, "0"));
-        int unitsPref = Integer.parseInt(mSharedPref.getString(PREF_KEY_UNITS, "0"));
-        setThemeColor(themePref);
-        setUnits(unitsPref);
+        String themePref = mSharedPref.getString(PREF_KEY_THEMES, "0");
+        String unitsPref = mSharedPref.getString(PREF_KEY_UNITS, "0");
+
+        if (themePref != null) {
+            setThemeColor(Integer.parseInt(themePref));
+        }
+        if (unitsPref != null) {
+            setUnits(Integer.parseInt(unitsPref));
+        }
     }
 
     @Override
