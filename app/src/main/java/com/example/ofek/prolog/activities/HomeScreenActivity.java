@@ -16,6 +16,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
@@ -402,6 +403,9 @@ public class HomeScreenActivity extends AppCompatActivity {
                 fab.setBackgroundTintList(ColorStateList.valueOf(Color.BLUE));
                 fab.setRippleColor(Color.BLACK);
                 tableTabs.setBackgroundColor(Color.BLACK);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setStatusBarColor(Color.BLUE);
+                }
                 break;
 
             default:

@@ -10,8 +10,11 @@ package com.example.ofek.prolog.activities;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.preference.PreferenceManager;
+import android.view.Window;
 
 import com.example.ofek.prolog.fragments.SettingsFragment;
 import com.example.ofek.prolog.utils.Utils;
@@ -30,7 +33,7 @@ public class SettingsActivity extends AppCompatActivity {
                 .commit();
 
         // Customized action bar color
-        SharedPreferences sharedPref = android.support.v7.preference.PreferenceManager
+        SharedPreferences sharedPref = PreferenceManager
                 .getDefaultSharedPreferences(this);
         int themePref = Integer.parseInt(sharedPref.getString(Utils.PREF_KEY_THEMES, "0"));
 
@@ -40,6 +43,9 @@ public class SettingsActivity extends AppCompatActivity {
                 break;
             case 1:
                 getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLUE));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getWindow().setStatusBarColor(Color.BLUE);
+                }
                 break;
         }
     }
